@@ -1,5 +1,13 @@
+/* Some basic css variables */
+:root {
+  --dark: #13293d;
+  --light: #fff;
+  --navlink-color: #b9c6ae;
+}
+
 * {
   box-sizing: border-box;
+  border: 2px solid red;
 }
 
 body {
@@ -20,4 +28,9 @@ h6 {
 
 p {
   margin: 0;
+}
+
+/* Styling for smaller devices */
+@media screen and (max-width: 768px) {
+
 }
