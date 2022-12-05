@@ -7,7 +7,8 @@
 
 * {
   box-sizing: border-box;
-  border: 2px solid red;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -17,17 +18,13 @@ body {
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+header {
+  display: flex;
+  align-items: center;
 }
 
-p {
-  margin: 0;
+}
+
 nav {
   flex: 1;
 }
