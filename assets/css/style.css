@@ -3,26 +3,46 @@
   --dark: #800015;
   --light: #ccbe00;
   --accent-color: #003a80;
+  --gradient-bg: linear-gradient(180deg, rgba(0,0,0,0.34) 100%, rgba(255,255,255,1) 100%);
+  --gradient-bg-dark: linear-gradient(180deg, rgba(0,0,0,0.6) 100%, rgba(255,255,255,1) 100%);
 }
 
+/* Reset our css */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  height: 100%;
 }
+
+/* General Link styles */
+
+a {
+  text-decoration: none;
+  color: var(--dark)
+}
+
+a:visited {
+  color: var(--dark)
+  text-decoration: none;
+}
+
+/* Header styling */
 
 header {
   display: flex;
   align-items: center;
 }
 
+header h1 {
+  padding: 0 20px;
 }
 
 nav {
@@ -39,7 +59,8 @@ nav ul li {
   list-style: none;
   padding: 20px;
 }
-nav ul li a {
+nav ul li a,
+.contact section a {
   display: block;
   position: relative;
   padding: 0.2em 0;
@@ -48,44 +69,63 @@ nav ul li a {
 
 /* Animated underline (taken from a codepen I found!) */
 
-nav ul li a::after {
+nav ul li a::after,
+.contact section a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 0.1em;
-  background-color: red;
+  background-color: var(--dark);
   opacity: 0;
   transition: opacity 300ms, transform 300ms;
 }
 
 nav ul li a:hover::after,
-nav ul li a:focus::after {
+nav ul li a:focus::after,
+.contact section a:hover::after,
+.contact section a:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
 }
 
+/* Hero styling */
+
 .hero-banner {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
   min-height: 250px;
-  background-image: linear-gradient( 135deg, #F05F57 10%, #360940 100%);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .hero-banner h2 {
   text-align: right;
   font-size: 3em;
-  padding: 20px;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+  border-radius: 8px 0px 0px 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
+
+.hero-banner img {
+  border-radius: 100%;
+  max-height: 200px;
+  margin-left: 20px;
+  align-self: center;
+}
+
+/* Generic section styling */
 
 .page-section {
   margin: 25px;
   display: flex;
+  justify-content: center;
+}
+
+.page-section.contact section {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .page-section section {
@@ -93,14 +133,13 @@ nav ul li a:focus::after {
   padding: 15px;
 }
 
-
 .page-section h3 {
   text-align: right;
   padding: 15px;
 }
 
 .page-section aside {
-  border-right: 3px solid green;
+  border-right: 3px solid var(--light);
   min-width: 180px;
 }
 
@@ -114,6 +153,7 @@ nav ul li a:focus::after {
   background-position: center;
   background-size: cover;
   margin: 15px;
+  border: 2px solid var(--light)
 }
 
 /* Details within projects */
@@ -131,7 +171,7 @@ nav ul li a:focus::after {
   background: var(--gradient-bg-dark);
 }
 
-.project-details a {
+.project-details div {
   position: relative;
   border-radius: 5px;
   display: block;
@@ -148,7 +188,6 @@ nav ul li a:focus::after {
 .page-section .project:first-of-type {
   grid-column-start: span 2;
   min-height: 250px;
-  /* background: url('../../assets/images/project1-acc.png'), linear-gradient(rgba(255, 255, 255, 0.8)); */
   background-image: url('../../assets/images/project1-acc.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -171,14 +210,24 @@ nav ul li a:focus::after {
   background: url('../../assets/images/02-portfolio-4.jpg');
 }
 
-/* Styling for smaller devices */
+/* Styling for responsiveness on smaller devices */
 @media screen and (max-width: 768px) {
-  .header {
+  header {
     flex-direction: column;
+    padding-top: 15px;
   }
 
   .hero-banner {
     min-height: 125px;
+    flex-direction: column;
+  }
+
+  .hero-banner img {
+    margin: 20px;
+  }
+
+  .hero-banner h2 {
+    font-size: 2.5em;
   }
 
   .page-section #portfolio {
@@ -195,7 +244,7 @@ nav ul li a:focus::after {
   }
 
   .page-section aside {
-    border-left: 3px solid green;
+    border-left: 3px solid var(--light);
     border-right: none;
     min-width: 180px;
   }
