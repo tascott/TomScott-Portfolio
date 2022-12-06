@@ -116,10 +116,43 @@ nav ul li a:focus::after {
   margin: 15px;
 }
 
+/* Details within projects */
+
+.page-section .project .project-details {
+  height: 100%;
+  background: var(--gradient-bg);
+  display: flex;
+  align-items: flex-end;
+  border-radius: 2px;
+}
+
+.page-section .project .project-details:hover {
+  height: 100%;
+  background: var(--gradient-bg-dark);
+}
+
+.project-details a {
+  position: relative;
+  border-radius: 5px;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  background: white;
+  left: 10px;
+  bottom: 15px;
+}
+
+/* Background images for project section */
+
 .page-section .project:first-of-type {
   grid-column-start: span 2;
   min-height: 250px;
-  background: url('../../assets/images/02-portfolio-1.jpg');
+  /* background: url('../../assets/images/project1-acc.png'), linear-gradient(rgba(255, 255, 255, 0.8)); */
+  background-image: url('../../assets/images/project1-acc.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-section .project:nth-of-type(2) {
