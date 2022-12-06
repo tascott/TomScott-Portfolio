@@ -18,12 +18,14 @@ Static site, just open HTML to run - no backed or JS code. Currently uses placeh
 Link to working site:
 
 ## Screenshot
+![portfolio](https://user-images.githubusercontent.com/18272434/205968324-30f7e576-453f-446d-8203-8a91c0021f27.png)
 
 ## Credits
 
-https://codepen.io/jstn/pen/mdoOZJ
+[Underline animations](https://codepen.io/jstn/pen/mdoOZJ
 
-Heropatterns.com
+
+[SVG patterns](Heropatterns.com)
 
 ## License
 
