@@ -82,9 +82,92 @@ nav ul li a:focus::after {
   font-size: 3em;
   padding: 20px;
 }
+
+.page-section {
+  margin: 25px;
+  display: flex;
+}
+
+.page-section section {
+  flex: 1;
+  padding: 15px;
+}
+
+
+.page-section h3 {
+  text-align: right;
+  padding: 15px;
+}
+
+.page-section aside {
+  border-right: 3px solid green;
+  min-width: 180px;
+}
+
+.page-section #portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.page-section .project {
+  min-height: 150px;
+  background-position: center;
+  background-size: cover;
+  margin: 15px;
+}
+
+.page-section .project:first-of-type {
+  grid-column-start: span 2;
+  min-height: 250px;
+  background: url('../../assets/images/02-portfolio-1.jpg');
+}
+
+.page-section .project:nth-of-type(2) {
+  background: url('../../assets/images/02-portfolio-1.jpg');
+}
+
+.page-section .project:nth-of-type(3) {
+  background: url('../../assets/images/02-portfolio-2.jpg');
+}
+
+.page-section .project:nth-of-type(4) {
+  background: url('../../assets/images/02-portfolio-3.jpg');
+}
+
+.page-section .project:nth-of-type(5) {
+  background: url('../../assets/images/02-portfolio-4.jpg');
 }
 
 /* Styling for smaller devices */
 @media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
 
+  .hero-banner {
+    min-height: 125px;
+  }
+
+  .page-section #portfolio {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .page-section .project:first-of-type {
+    grid-column-start: span 1;
+    min-height: 250px;
+  }
+
+  .page-section {
+    flex-direction: column;
+  }
+
+  .page-section aside {
+    border-left: 3px solid green;
+    border-right: none;
+    min-width: 180px;
+  }
+
+  .page-section h3 {
+    text-align: left;
+  }
 }
